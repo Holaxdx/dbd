@@ -44,3 +44,10 @@ WHERE p.idProducto not in (
     WHERE c.telefono LIKE '221%' 
 )
 ORDER BY p.nombreP
+
+-- inciso 5
+-- ver como hacer para que el null sea 0
+SELECT nombreP, descripcion, precio, SUM(d.cantidad) as cant_vendidos
+From Producto p LEFT JOIN Detalle d ON p.idProducto=d.idProducto
+GROUP BY nombreP,descripcion, precio, cantidad 
+
