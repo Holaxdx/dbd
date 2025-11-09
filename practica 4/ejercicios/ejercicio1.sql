@@ -49,5 +49,5 @@ ORDER BY p.nombreP
 -- productos repetidos, corregir!
 SELECT nombreP, descripcion, precio, coalesce(SUM(d.cantidad),0) as cant_vendidos
 FROM Producto p LEFT JOIN Detalle d ON p.idProducto=d.idProducto
-GROUP BY nombreP, descripcion, precio, cantidad 
+GROUP BY nombreP, descripcion, precio
 
